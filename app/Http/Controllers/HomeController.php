@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Chatkit\Laravel\ChatkitManager;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -21,8 +22,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ChatkitManager $chatkit)
     {
-        return view('home');
+        $userRooms = $chatkit->getUserRooms(Auth::user()->email);
+        return view('home', ['user' => $userRooms]);
     }
 }
