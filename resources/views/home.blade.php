@@ -14,7 +14,14 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <form method="post">
+                        @csrf
+                        <input class="form-control" name="user_id" placeholder="Who do you want to chat with?">
+                        <button class="btn btn-lg btn-primary">Start Chatting</button>
+                    </form>
+
+                    @foreach($chats as $chat)
+                        @endforeach
                 </div>
             </div>
         </div>

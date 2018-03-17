@@ -25,6 +25,6 @@ class HomeController extends Controller
     public function index(ChatkitManager $chatkit)
     {
         $chats = $chatkit->getUserRooms(Auth::user()->email);
-        return view('home', ['user' => $chats]);
+        return view('home', ['chats' => $chats]);
     }
 }
