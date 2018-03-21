@@ -6,7 +6,7 @@
             <div class="card card-default">
                 <div class="card-header">Users</div>
                 <div class="card-body">
-                    <user-list :users="users" @chatopened="currentChat = $event.user"></user-list>
+                    <user-list :users="users" @chatopened="chatWith($event.user)"></user-list>
                 </div>
             </div>
         </div>
@@ -18,5 +18,5 @@
 
 <script>
     var users = JSON.parse('{!! json_encode($users) !!}');
-    var currentChat;
+    window.user = JSON.parse('{!! json_encode(\Auth::user()) !!}');
 </script>
