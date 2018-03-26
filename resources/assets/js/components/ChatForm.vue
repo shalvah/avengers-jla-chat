@@ -12,6 +12,8 @@
 
 <script>
     export default {
+        props: ['room'],
+
         data() {
             return {
                 message: ''
@@ -21,11 +23,12 @@
         methods: {
             sendMessage() {
                 if (this.message) {
-                    this.$emit('messagesent', {
+                    currentUser.sendMessage({
                         text: this.message,
-                        sender: {id: 'You'}
-                    });
-                    this.message = ''
+                        roomId: this.room.id
+                    }).then(() => {
+                        this.message = ''
+                    })
                 }
             }
         }
