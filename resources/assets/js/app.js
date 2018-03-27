@@ -26,9 +26,9 @@ const app = new Vue({
 
 import { ChatManager, TokenProvider } from '@pusher/chatkit';
 const chatManager = new ChatManager({
-    instanceLocator: 'your-instance-locator',
+    instanceLocator: process.env.MIX_CHATKIT_INSTANCE_LOCATOR,
     userId: window.user.email,
-    tokenProvider: new TokenProvider({ url: 'your-auth-url' })
+    tokenProvider: new TokenProvider({ url: process.env.MIX_CHATKIT_AUTH_URL })
 });
 
 chatManager.connect()

@@ -561,16 +561,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.12",
+            "version": "v5.6.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "82d8165d1ea86bdd81ddfa1db9343fa19e7d1450"
+                "reference": "90ccb77a543ff063533083f427d5e655546afbad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/82d8165d1ea86bdd81ddfa1db9343fa19e7d1450",
-                "reference": "82d8165d1ea86bdd81ddfa1db9343fa19e7d1450",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/90ccb77a543ff063533083f427d5e655546afbad",
+                "reference": "90ccb77a543ff063533083f427d5e655546afbad",
                 "shasum": ""
             },
             "require": {
@@ -695,7 +695,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-03-14T17:29:38+00:00"
+            "time": "2018-03-26T13:45:20+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1415,12 +1415,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/shalvah/pusher-chatkit-laravel.git",
-                "reference": "e936ecbd9e680413e89a8e06200bc87760c22a75"
+                "reference": "c5ea85745a9935ad1bd3a4cc990240687884c188"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shalvah/pusher-chatkit-laravel/zipball/e936ecbd9e680413e89a8e06200bc87760c22a75",
-                "reference": "e936ecbd9e680413e89a8e06200bc87760c22a75",
+                "url": "https://api.github.com/repos/shalvah/pusher-chatkit-laravel/zipball/c5ea85745a9935ad1bd3a4cc990240687884c188",
+                "reference": "c5ea85745a9935ad1bd3a4cc990240687884c188",
                 "shasum": ""
             },
             "require": {
@@ -1474,7 +1474,7 @@
                 "realtime",
                 "rest"
             ],
-            "time": "2018-02-14T22:31:04+00:00"
+            "time": "2018-03-18T07:44:54+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
