@@ -22,13 +22,12 @@
 
         methods: {
             sendMessage() {
-                if (this.message) {
+                if (this.message.trim()) {
                     currentUser.sendMessage({
                         text: this.message,
                         roomId: this.room.id
-                    }).then(() => {
-                        this.message = ''
-                    })
+                    });
+                    this.message = '';
                 }
             }
         }

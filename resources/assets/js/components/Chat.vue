@@ -1,6 +1,6 @@
 <template>
     <div class="panel panel-default">
-        <div class="panel-heading">{{ user.name }}</div>
+        <div class="panel-heading">{{ otherUser.name }}</div>
         <div class="panel-body">
             <message-list :messages="messages"></message-list>
         </div>
@@ -13,7 +13,7 @@
 <script>
     export default {
 
-        props: ['user'],
+        props: ['otherUser'],
 
         data() {
             return {
@@ -28,7 +28,7 @@
 
         methods: {
             async subscribeToChat() {
-                let otherUserId = this.user.email;
+                let otherUserId = this.otherUser.email;
                 let roomName = [currentUser.id, otherUserId].sort().join('|');
                 this.room = currentUser.rooms.find(room => room.name === roomName);
                 if (!(this.room)) {
@@ -51,7 +51,9 @@
             },
             addMessage(message) {
                 if (message.sender.id === currentUser.id) {
-                    message.sender.id = 'You';
+                    message.sender.displayName = 'You';
+                } else {
+                    message.sender.displayName = this.otherUser.name
                 }
                 this.messages.push(message);
             }

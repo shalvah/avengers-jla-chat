@@ -3,7 +3,7 @@
         <li v-for="message in messages">
             <div>
                 <strong class="primary-font">
-                    {{ message.sender.id }}
+                    {{ message.sender.displayName }}
                 </strong>
             </div>
             <p>
