@@ -1111,9 +1111,9 @@ var app = new Vue({
 
 
 var chatManager = new __WEBPACK_IMPORTED_MODULE_0__pusher_chatkit__["a" /* ChatManager */]({
-    instanceLocator: 'your-instance-locator',
+    instanceLocator: "v1:us1:500c1f69-3505-401b-9846-be7365e40586",
     userId: window.user.email,
-    tokenProvider: new __WEBPACK_IMPORTED_MODULE_0__pusher_chatkit__["b" /* TokenProvider */]({ url: 'your-auth-url' })
+    tokenProvider: new __WEBPACK_IMPORTED_MODULE_0__pusher_chatkit__["b" /* TokenProvider */]({ url: "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/500c1f69-3505-401b-9846-be7365e40586/token" })
 });
 
 chatManager.connect().then(function (currentUser) {
@@ -43387,7 +43387,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-    props: ['user'],
+    props: ['otherUser'],
 
     data: function data() {
         return {
@@ -43410,7 +43410,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                     while (1) {
                         switch (_context.prev = _context.next) {
                             case 0:
-                                otherUserId = this.user.email;
+                                otherUserId = this.otherUser.email;
                                 roomName = [currentUser.id, otherUserId].sort().join('|');
 
                                 this.room = currentUser.rooms.find(function (room) {
@@ -43461,7 +43461,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         }(),
         addMessage: function addMessage(message) {
             if (message.sender.id === currentUser.id) {
-                message.sender.id = 'You';
+                message.sender.displayName = 'You';
+            } else {
+                message.sender.displayName = this.otherUser.name;
             }
             this.messages.push(message);
         }
@@ -44259,7 +44261,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "panel panel-default" }, [
     _c("div", { staticClass: "panel-heading" }, [
-      _vm._v(_vm._s(_vm.user.name))
+      _vm._v(_vm._s(_vm.otherUser.name))
     ]),
     _vm._v(" "),
     _c(
@@ -44377,7 +44379,7 @@ var render = function() {
           _c("strong", { staticClass: "primary-font" }, [
             _vm._v(
               "\n                " +
-                _vm._s(message.sender.id) +
+                _vm._s(message.sender.displayName) +
                 "\n            "
             )
           ])
